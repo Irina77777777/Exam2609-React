@@ -1,0 +1,8 @@
+.buttonchiki{
+    display: flex;
+    margin: 25px;
+}
+ input {
+     text-align: center;
+     color: yellowgreen;
+ }
