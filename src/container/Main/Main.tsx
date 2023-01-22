@@ -7,17 +7,17 @@ type Props = {
        totalData: {
     totalCount: number
     totalPrice: number
-}
+    }
+     addPriceToTotal:(count: number, price: number) => void
 }
 
 
-const Main = ({ totalData }: Props) => {
+const Main = ({ totalData, addPriceToTotal }: Props) => {
     return (
         <Container maxWidth="lg" component="main">
-
             <Task1 />
-            <Task2 totalData={totalData} />
-             {/* <Routes>
+            <Task2 totalData={totalData} addPriceToTotal={addPriceToTotal} />
+            {/* <Routes>
                  <Route path="/" element={<Task1 />} /> 
                  <Route path="/TASK-2" element={<Task2 />} /> 
             </Routes>   */}

@@ -17,15 +17,6 @@ const Task1 = (props: Props) => {
             >
                 First task :
             </Typography>
-            <Typography
-                variant="h5"
-                align="center"
-                component="h1"
-                color="blueviolet"
-                sx={{ padding: '50px 0' }}
-            >
-                Kovalenko Iryna FE2609
-            </Typography>
 
             <Container maxWidth="lg" sx={{ padding: '50px 10px' }}>
                 <div className="buttonchiki">

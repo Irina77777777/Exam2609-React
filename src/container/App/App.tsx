@@ -17,21 +17,24 @@ type TotalData = {
 const App = (props: Props) => {
 
     const [totalData, setTotalData] = useState < TotalData > ({
-        totalCount: 5,
-        totalPrice: 100,
+        totalCount: 0,
+        totalPrice: 0,
     }
     )
     
 const addPriceToTotal = (count: number, price: number) => {
-    setTotalData({totalCount: count, totalPrice: count*price})
+    setTotalData((prevState: TotalData) => ({
+        totalCount: prevState.totalCount + count,
+        totalPrice: prevState.totalPrice + price*count,
+    }))
 }
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header />
-            <Main totalData={totalData} />
-            <Button onClick={() => addPriceToTotal(5, 500)}> Buy1</Button>
+            <Main totalData={totalData}
+            addPriceToTotal={addPriceToTotal} />
         </StyledEngineProvider>
     )
 }

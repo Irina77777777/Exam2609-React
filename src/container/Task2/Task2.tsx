@@ -3,15 +3,16 @@ import Products from 'container/Products/Products'
 
 
 type Props = {
-     totalData :{
-    totalCount: number
-    totalPrice: number
+    totalData: {
+        totalCount: number
+        totalPrice: number
+    }
+    addPriceToTotal: (count: number, price: number) => void
 }
-}
 
 
 
-const Task2 = ({ totalData }: Props) => {
+const Task2 = ({ totalData, addPriceToTotal }: Props) => {
  
     return (
         <>
@@ -31,7 +32,7 @@ const Task2 = ({ totalData }: Props) => {
                 <Button variant="outlined">USD</Button>
                 <Button variant="outlined">AED</Button>
             </div>
-            <Products />
+            <Products addPriceToTotal={addPriceToTotal} />
             <div> Total: {totalData.totalPrice}</div>
         </>
     )

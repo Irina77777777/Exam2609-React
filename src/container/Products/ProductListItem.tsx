@@ -5,8 +5,9 @@ type Props = {
     title: string
     desc: string
     price: number
+    addPriceToTotal: (count: number, price: number) => void
 }
-const ProductListItem = ({ title, desc, price }: Props) => {
+const ProductListItem = ({ title, desc, price, addPriceToTotal }: Props) => {
   return (
       <Card className="product">
           <CardContent>
@@ -15,7 +16,8 @@ const ProductListItem = ({ title, desc, price }: Props) => {
               <div className="product-price"> <span>EUR: </span> {price}</div>
           </CardContent>
           <CardActions className="btns-wrap"> 
-              <Button variant="outlined">Buy
+              <Button variant="outlined"
+              onClick={()=> addPriceToTotal(1, price)}>Buy
                   
               </Button>
           </CardActions>
