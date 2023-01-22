@@ -1,8 +1,18 @@
 import { Container, TextField, Button, Typography } from '@mui/material'
 import Products from 'container/Products/Products'
 
-type Props = {}
-const Task2 = (props: Props) => {
+
+type Props = {
+     totalData :{
+    totalCount: number
+    totalPrice: number
+}
+}
+
+
+
+const Task2 = ({ totalData }: Props) => {
+ 
     return (
         <>
             Task2
@@ -22,7 +32,7 @@ const Task2 = (props: Props) => {
                 <Button variant="outlined">AED</Button>
             </div>
             <Products />
-            <div>Total: </div>
+            <div> Total: {totalData.totalPrice}</div>
         </>
     )
 }
