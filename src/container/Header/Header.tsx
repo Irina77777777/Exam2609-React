@@ -36,10 +36,13 @@ const Header = (props: Props) => {
                             Exam FE2609 Kovalenko Iryna
                         </Typography>
                         <Button color="inherit">
-                            Task-1 
+                            {/* <NavLink to={'/'}>Task-1</NavLink> */}
+                            Task-1
                         </Button>
                         <Button color="inherit">
-                           Task-2</Button>
+                            {/* <NavLink to={'/TASK-2'}>Task-2</NavLink> */}
+                            Task-2
+                        </Button>
                     </Toolbar>
                 </Container>
             </AppBar>

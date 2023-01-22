@@ -1,0 +1,13 @@
+
+div{
+    text-align: center;
+}
+.product-title{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.btns-wrap{
+    display: flex;
+    justify-content: center;
+}
