@@ -1,13 +1,7 @@
 import {  Button, Typography } from '@mui/material'
 import Products from 'container/Products/Products'
 import { useState } from 'react'
-// type Props = {
-//     totalData: {
-//         totalCount: number
-//         totalPrice: number
-//     }
-//     addPriceToTotal: (count: number, price: number) => void
-// }
+
 type Props = {
 }
 

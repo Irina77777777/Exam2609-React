@@ -5,7 +5,6 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import  Container  from '@mui/material/Container'
-import { NavLink } from 'react-router-dom'
 
 type Props = {}
 const Header = (props: Props) => {
@@ -36,11 +35,9 @@ const Header = (props: Props) => {
                             Exam FE2609 Kovalenko Iryna
                         </Typography>
                         <Button color="inherit">
-                            {/* <NavLink to={'/'}>Task-1</NavLink> */}
                             Task-1
                         </Button>
                         <Button color="inherit">
-                            {/* <NavLink to={'/TASK-2'}>Task-2</NavLink> */}
                             Task-2
                         </Button>
                     </Toolbar>
