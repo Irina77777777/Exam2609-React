@@ -6,7 +6,8 @@ type Props = {
     valData: {
         oneiP: number
     twoiP: number
-    threeiP: number
+        threeiP: number
+    val: string
 }
 }
 const Products = ({ addPriceToTotal, valData }: Props) => {
@@ -23,6 +24,7 @@ const Products = ({ addPriceToTotal, valData }: Props) => {
                     title="iPhone 12"
                     desc="This is iPhone 12..."
                     price={valData.oneiP}
+                    valu={valData.val}
                     addPriceToTotal={addPriceToTotal}
                 />
             </Grid>
@@ -31,6 +33,7 @@ const Products = ({ addPriceToTotal, valData }: Props) => {
                     title="iPhone 8"
                     desc="This is iPhone 8..."
                     price={valData.twoiP}
+                    valu={valData.val}
                     addPriceToTotal={addPriceToTotal}
                 />
             </Grid>
@@ -39,6 +42,7 @@ const Products = ({ addPriceToTotal, valData }: Props) => {
                     title="iPhone X"
                     desc="This is iPhone X..."
                     price={valData.threeiP}
+                    valu={valData.val}
                     addPriceToTotal={addPriceToTotal}
                 />
             </Grid>

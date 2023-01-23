@@ -19,6 +19,7 @@ type ValData = {
     oneiP: number
     twoiP: number
     threeiP: number
+    val: string
 }
 
 const Task2 = (price: Props
@@ -32,6 +33,7 @@ const Task2 = (price: Props
     oneiP: 750,
     twoiP:  850,
     threeiP: 1250,
+    val: 'EUR',
     })
 
     const addPriceToTotal = (count: number, price: number) => {
@@ -41,12 +43,12 @@ const Task2 = (price: Props
         }))
     }
 
-    const uanPriceToTotal = (one: number, two: number, three: number) => {
-        setValData({
-           
+    const uanPriceToTotal = (one: number, two: number, three: number, va: string) => {
+        setValData({    
             oneiP: one,
             twoiP: two,
             threeiP: three,
+            val: va, 
         })
     }
 
@@ -65,33 +67,31 @@ const Task2 = (price: Props
             <div className="buttonchiki">
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(30000, 40000, 50000)}
+                    onClick={() => uanPriceToTotal(30000, 40000, 50000, 'UAN')}
                 >
                     UAN
                 </Button>
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(750, 850, 1250)}
+                    onClick={() => uanPriceToTotal(750, 850, 1250, 'EUR')}
                 >
                     EUR
                 </Button>
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(1000, 2000, 3000)}
+                    onClick={() => uanPriceToTotal(1000, 2000, 3000, 'USD')}
                 >
                     USD
                 </Button>
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(3000, 4000, 5000)}
+                    onClick={() => uanPriceToTotal(3000, 4000, 5000, 'AED')}
                 >
                     AED
                 </Button>
-                <Button
-                    variant="outlined"
-                    onClick={() => uanPriceToTotal(0, 0, 0)}
-                >
-                  GO  
+                <Button variant="outlined"
+                    onClick={() => addPriceToTotal(0, totalData.totalPrice = 0)}>
+                    Total=0
                 </Button>
             </div>
             <Products addPriceToTotal={addPriceToTotal} valData={valData} />
