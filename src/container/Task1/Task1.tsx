@@ -1,15 +1,30 @@
-import { Container, TextField, Typography } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import { useState } from 'react'
+import './Task-1.css'
 
-type Props = {}
-const Task1 = (props: Props) => {
- const [count, setCount] = useState<number>(0)
- const [count2, setCount2] = useState<number>(0)
- const [count1, setCount1] = useState<number>(0)
+type ButtonsInRow = {
+    [id: number]: number 
+}
+
+const Task1 = () => {
+    const [buttonsInRow, setButtonsInRow] = useState<ButtonsInRow>({
+         1: 0,
+         2: 0,
+        3: 0,
+         15:5
+    })
+    
+    const addNum = (id: number, count: number) => {
+        setButtonsInRow((prevState: ButtonsInRow) => ({
+            ...prevState,
+            [id]: prevState[id] + count,
+        }))
+    }
+
     return (
         <div>
             <Typography
-                variant="h3"
+                variant="h4"
                 align="center"
                 component="h1"
                 color="blueviolet"
@@ -20,24 +35,17 @@ const Task1 = (props: Props) => {
 
             <Container maxWidth="lg" sx={{ padding: '50px 10px' }}>
                 <div className="buttonchiki">
-                    <TextField
-                        label="Change Count 1"
-                        value={count}
-                        variant="outlined"
-                        onClick={() => setCount(count + 1)}
-                    ></TextField>
-                    <TextField
-                        label="Change Count 2"
-                        value={count2}
-                        variant="outlined"
-                        onClick={() => setCount2(count2 + 1)}
-                    ></TextField>
-                    <TextField
-                        label="Change Count 3"
-                        value={count1}
-                        variant="outlined"
-                        onClick={() => setCount1(count1 + 1)}
-                    ></TextField>
+                    {Object.keys(buttonsInRow).map((buttonId) => (
+                        <div 
+                            key={buttonId}
+                            onClick={() => addNum(parseInt(buttonId), 1)}
+                        >
+                            Change count:
+                            {buttonId}: {buttonsInRow[parseInt(buttonId)]}
+                        
+                        </div>
+                       
+                    ))}
                 </div>{' '}
             </Container>
         </div>

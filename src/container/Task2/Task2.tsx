@@ -58,7 +58,7 @@ const Task2 = (price: Props
             >
                 Our shop page
             </Typography>
-            <div className="buttonchiki">
+            <div className="buttonchiki2">
                 <Button
                     variant="outlined"
                     onClick={() => uanPriceToTotal(30000, 40000, 50000, 'UAN')}
