@@ -86,7 +86,7 @@ const Task2 = (price: Props
                             850,
                             1250,
                             'EUR',
-                            (totalData.totalPrice = totalData.totalPrice)
+                            (totalData.totalPrice = totalData.totalPrice*1)
                         )
                     }
                 >
