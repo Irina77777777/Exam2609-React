@@ -36,7 +36,7 @@ const Task1 = () => {
             <Container maxWidth="lg" sx={{ padding: '50px 10px' }}>
                 <div className="buttonchiki">
                     {Object.keys(buttonsInRow).map((buttonId) => (
-                        <div 
+                        <div className='butt'
                             key={buttonId}
                             onClick={() => addNum(parseInt(buttonId), 1)}
                         >

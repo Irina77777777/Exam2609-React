@@ -14,6 +14,7 @@ type ValData = {
     twoiP: number
     threeiP: number
     val: string
+     totalPrice: number
 }
 
 const Task2 = (price: Props
@@ -27,7 +28,8 @@ const Task2 = (price: Props
     oneiP: 750,
     twoiP:  850,
     threeiP: 1250,
-    val: 'EUR',
+        val: 'EUR',
+     totalPrice: 0,
     })
 
     const addPriceToTotal = (count: number, price: number) => {
@@ -37,14 +39,17 @@ const Task2 = (price: Props
         }))
     }
 
-    const uanPriceToTotal = (one: number, two: number, three: number, va: string) => {
+    const uanPriceToTotal = (one: number, two: number, three: number,
+        va: string, totalPrice: number) => {
         setValData({    
             oneiP: one,
             twoiP: two,
             threeiP: three,
             val: va, 
-        })
-    }
+             totalPrice: 0
+},
+       ) }
+  //  }
 
     return (
         <>
@@ -61,30 +66,66 @@ const Task2 = (price: Props
             <div className="buttonchiki2">
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(30000, 40000, 50000, 'UAN')}
+                    onClick={() =>
+                        uanPriceToTotal(
+                            30000,
+                            40000,
+                            50000,
+                            'UAN',
+                            (totalData.totalPrice = totalData.totalPrice * 400)
+                        )
+                    }
                 >
                     UAN
                 </Button>
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(750, 850, 1250, 'EUR')}
+                    onClick={() =>
+                        uanPriceToTotal(
+                            750,
+                            850,
+                            1250,
+                            'EUR',
+                            (totalData.totalPrice = totalData.totalPrice)
+                        )
+                    }
                 >
                     EUR
                 </Button>
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(1000, 2000, 3000, 'USD')}
+                    onClick={() =>
+                        uanPriceToTotal(
+                            1000,
+                            2000,
+                            3000,
+                            'USD',
+                            (totalData.totalPrice = totalData.totalPrice * 1.34)
+                        )
+                    }
                 >
                     USD
                 </Button>
                 <Button
                     variant="outlined"
-                    onClick={() => uanPriceToTotal(3000, 4000, 5000, 'AED')}
+                    onClick={() =>
+                        uanPriceToTotal(
+                            3000,
+                            4000,
+                            5000,
+                            'AED',
+                            (totalData.totalPrice = totalData.totalPrice * 40)
+                        )
+                    }
                 >
                     AED
                 </Button>
-                <Button variant="outlined"
-                    onClick={() => addPriceToTotal(0, totalData.totalPrice = 0)}>
+                <Button
+                    variant="outlined"
+                    onClick={() =>
+                        addPriceToTotal(0, (totalData.totalPrice = 0))
+                    }
+                >
                     Total=0
                 </Button>
             </div>

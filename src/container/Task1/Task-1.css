@@ -1,13 +1,16 @@
 .buttonchiki {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 15px;
+}
+.butt{
     border: 1px, solid, blue;
     background-color: aquamarine;
+    padding: 5px;
 }
 .buttonchiki2 {
     display: flex;
     justify-content: center;
     margin: 15px;
-    border: 1px, solid, blue;
 }
