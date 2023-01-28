@@ -8,6 +8,7 @@
     border: 1px, solid, blue;
     background-color: aquamarine;
     padding: 5px;
+    border-radius: 10px;
 }
 .buttonchiki2 {
     display: flex;
