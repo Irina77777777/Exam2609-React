@@ -1,4 +1,5 @@
 import {  Button, Typography } from '@mui/material'
+import { count } from 'console'
 import Products from 'container/Products/Products'
 import { useState } from 'react'
 
@@ -47,9 +48,8 @@ const Task2 = (price: Props
             threeiP: three,
             val: va, 
              totalPrice: 0
-},
+}
        ) }
-  //  }
 
     return (
         <>
@@ -72,7 +72,7 @@ const Task2 = (price: Props
                             40000,
                             50000,
                             'UAN',
-                            (totalData.totalPrice = totalData.totalPrice * 400)
+                            (totalData.totalPrice = totalData.totalPrice * 40)
                         )
                     }
                 >
@@ -114,7 +114,7 @@ const Task2 = (price: Props
                             4000,
                             5000,
                             'AED',
-                            (totalData.totalPrice = totalData.totalPrice * 40)
+                            (totalData.totalPrice = totalData.totalPrice * 4)
                         )
                     }
                 >
