@@ -34,8 +34,10 @@ const Task2 = (price: Props
 
     const addPriceToTotal = (count: number, price: number) => {
         setTotalData((prevState: TotalData) => ({
+
             totalCount: prevState.totalCount + count,
             totalPrice: prevState.totalPrice + price * count,
+
         }))
     }
 
@@ -71,7 +73,7 @@ const Task2 = (price: Props
                             40000,
                             50000,
                             'UAN',
-                            (totalData.totalPrice = totalData.totalPrice * 40)
+                            (totalData.totalPrice = totalData.totalPrice * 18)
                         )
                     }
                 >
@@ -85,7 +87,9 @@ const Task2 = (price: Props
                             850,
                             1250,
                             'EUR',
-                            (totalData.totalPrice = totalData.totalPrice*1)
+                            (totalData.totalPrice = Math.round(
+                                totalData.totalPrice * 0.025
+                            ))
                         )
                     }
                 >
@@ -99,7 +103,9 @@ const Task2 = (price: Props
                             2000,
                             3000,
                             'USD',
-                            (totalData.totalPrice = totalData.totalPrice * 1.34)
+                            (totalData.totalPrice = Math.round(
+                                totalData.totalPrice * 1.24
+                            ))
                         )
                     }
                 >
@@ -113,7 +119,8 @@ const Task2 = (price: Props
                             4000,
                             5000,
                             'AED',
-                            (totalData.totalPrice = totalData.totalPrice * 4)
+                            (totalData.totalPrice =
+                                Math.round(totalData.totalPrice * 1.79))
                         )
                     }
                 >
