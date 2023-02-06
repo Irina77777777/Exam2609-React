@@ -19,7 +19,11 @@ const Task1 = () => {
             </Typography>
 
             <Container maxWidth="lg" sx={{ padding: '50px 10px' }}>
-                <Counti/>
+                <div className="buttonchiki">
+                    <Counti />
+                    <Counti />
+                    <Counti /> 
+                </div>
             </Container>
         </div>
     )

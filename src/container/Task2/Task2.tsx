@@ -1,6 +1,7 @@
 import {  Button, Typography } from '@mui/material'
 import Products from 'container/Products/Products'
 import { useState } from 'react'
+import valArray from './Task2'
 
 type Props = {
 }
@@ -14,11 +15,13 @@ type ValData = {
     twoiP: number
     threeiP: number
     val: string
-     totalPrice: number
+    totalPrice: number
+    count: number
+    tot1: number
 }
 
 
-const Task2 = (price: Props
+const Task2 = ( price: Props
 ) => {
     const [totalData, setTotalData] = useState<TotalData>({
         totalCount: 1,
@@ -31,7 +34,9 @@ const Task2 = (price: Props
     twoiP:  850,
     threeiP: 1250,
         val: 'EUR',
-        totalPrice: 1
+        totalPrice: 1,
+        count: 1,
+        tot1: totalData.totalPrice
     })
 
     const uanPriceToTotal = (
@@ -39,24 +44,36 @@ const Task2 = (price: Props
         two: number,
         three: number,
         va: string,
-        totalPrice: number, count: number
+        totalPrice: number,
+        count: number
     ) => {
-        setValData((prevStat: ValData) => ({
-            ...prevStat,
-
-            //one: prevStat.oneiP === 2250 ? (count = 10) : (count = 10),
-            // two: prevStat.twoiP === 2000 ? (count = 2) : (count = 2),
-            // three: prevStat.threeiP === 50000 ? (count = 40) : (count = 40),
-            oneiP: 750* count,
-            twoiP: 850* count,
-            threeiP: 1250* count,
+        setValData({
+            oneiP: 750 * count,
+            twoiP: 850 * count,
+            threeiP: 1250 * count,
             val: va,
-            totalPrice: prevStat.totalPrice * count,
-        }))
+            totalPrice: totalPrice,
+            count: 1,
+            tot1: totalPrice * count
+        })
     }
-       
-         
-      
+
+       // setValData((prevStat: ValData) => ({
+         //   ...prevStat,
+          //  one: prevStat.oneiP === 2250 ? (count = 10) : (count = 5),
+           // two: prevStat.twoiP === 850 ? (count = 2) : (count = 3),
+            //three: prevStat.threeiP === 50000 ? (count = 40) : (count = 0.025),
+            // va:prevStat.val === 'va' ? count=1 : count=1,
+             //oneiP: 750 * count,
+            //  twoiP: 850 * count,
+            //  threeiP: 1250 * count,
+           // oneiP: one,
+          //  twoiP: two,
+            //threeiP: three,
+            // val: va,
+            // totalPrice: prevStat.totalPrice * count,
+       // }))
+   // }
 
     const addPriceToTotal = (count: number, price: number) => {
         setTotalData((prevState: TotalData) => ({
@@ -64,16 +81,6 @@ const Task2 = (price: Props
             totalPrice: prevState.totalPrice + price * count,
         }))
     }
-
-//     const uanPriceToTotal = (one: number, two: number, three: number,
-//         va: string, totalPrice: number) => {
-//         setValData({    
-//             oneiP: one,
-//             twoiP: two,
-//             threeiP: three,
-//             val: va, 
-//              totalPrice: 0
-// } ) }
 
     return (
         <>
@@ -87,6 +94,8 @@ const Task2 = (price: Props
             >
                 Our shop page
             </Typography>
+            {valArray}
+            {/* <div> tot1 {valData.tot1}</div> */}
             <div className="buttonchiki2">
                 <Button
                     variant="outlined"
@@ -96,7 +105,8 @@ const Task2 = (price: Props
                             40000,
                             50000,
                             'UAN',
-                            (totalData.totalPrice = totalData.totalPrice * 18), 40
+                            (valData.tot1 = totalData.totalPrice * 40),
+                            40 
                         )
                     }
                 >
@@ -111,8 +121,10 @@ const Task2 = (price: Props
                             1250,
                             'EUR',
                             (totalData.totalPrice = Math.round(
-                                totalData.totalPrice * 0.025
-                            )), 1
+                                totalData.totalPrice * 1
+                            )),
+                            1
+                            //  valData.count
                         )
                     }
                 >
@@ -126,9 +138,10 @@ const Task2 = (price: Props
                             2000,
                             3000,
                             'USD',
-                            (totalData.totalPrice = Math.round(
-                                totalData.totalPrice * 1.35
-                            )), 1.5
+                            (valData.tot1 = Math.round(
+                                totalData.totalPrice * 1.05
+                            )),
+                            1.05
                         )
                     }
                 >
@@ -142,25 +155,31 @@ const Task2 = (price: Props
                             2550,
                             3750,
                             'AED',
-                             (totalData.totalPrice =
-                            Math.round(totalData.totalPrice * 1.75)),
-                            3
+                            (valData.tot1 = Math.round(
+                                totalData.totalPrice * 3.8
+                            )),
+                            3.8
+                            // valData.count,
+                            // (valData.tot = Math.round(totalData.totalPrice / 4))
                         )
                     }
                 >
                     AED
                 </Button>
-                <Button
+                {/* <Button
                     variant="outlined"
                     onClick={() =>
                         addPriceToTotal(0, (totalData.totalPrice = 0))
                     }
                 >
                     Total=0
-                </Button>
+                </Button> */}
             </div>
             <Products addPriceToTotal={addPriceToTotal} valData={valData} />
-            <div> Total: {totalData.totalPrice}</div>
+            <div>
+                {' '}
+                Total: {valData.tot1 === 0 ? totalData.totalPrice : valData.tot1}
+            </div>
         </>
     )
 }

@@ -7,10 +7,7 @@ type ButtonsInRow = {
 
 const Counti = (props: Props) => {
     const [buttonsInRow, setButtonsInRow] = useState<ButtonsInRow>({
-        1: 0,
-        2: 0,
-        3: 0,
-        17: 7,
+        1: 0,     
     })
 
     const addNum = (id: number, count: number) => {
@@ -28,8 +25,9 @@ const Counti = (props: Props) => {
                     key={buttonId}
                     onClick={() => addNum(parseInt(buttonId), 1)}
                 >
-                    Change count:
-                    {buttonId}: {buttonsInRow[parseInt(buttonId)]}
+                    Change count:  {'  '} (
+                    {/* {buttonId}: */}
+                    {buttonsInRow[parseInt(buttonId)]}  )
                 </div>
             ))}
         </div>
