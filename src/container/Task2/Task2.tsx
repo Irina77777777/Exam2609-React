@@ -40,9 +40,6 @@ const Task2 = ( price: Props
     })
 
     const uanPriceToTotal = (
-        one: number,
-        two: number,
-        three: number,
         va: string,
         totalPrice: number,
         count: number
@@ -101,9 +98,6 @@ const Task2 = ( price: Props
                     variant="outlined"
                     onClick={() =>
                         uanPriceToTotal(
-                            30000,
-                            40000,
-                            50000,
                             'UAN',
                             (valData.tot1 = totalData.totalPrice * 40),
                             40 
@@ -116,9 +110,6 @@ const Task2 = ( price: Props
                     variant="outlined"
                     onClick={() =>
                         uanPriceToTotal(
-                            750,
-                            850,
-                            1250,
                             'EUR',
                             (totalData.totalPrice = Math.round(
                                 totalData.totalPrice * 1
@@ -134,9 +125,6 @@ const Task2 = ( price: Props
                     variant="outlined"
                     onClick={() =>
                         uanPriceToTotal(
-                            1000,
-                            2000,
-                            3000,
                             'USD',
                             (valData.tot1 = Math.round(
                                 totalData.totalPrice * 1.05
@@ -151,9 +139,6 @@ const Task2 = ( price: Props
                     variant="outlined"
                     onClick={() =>
                         uanPriceToTotal(
-                            2250,
-                            2550,
-                            3750,
                             'AED',
                             (valData.tot1 = Math.round(
                                 totalData.totalPrice * 3.8
