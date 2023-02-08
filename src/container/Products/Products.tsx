@@ -2,7 +2,7 @@ import { Grid } from "@mui/material"
 import ProductListItem from "./ProductListItem"
 
 type Props = {
-    addPriceToTotal: (count: number, price: number) => void
+    addPriceToTotal: (tot1: number, count: number, price: number) => void
     valData: {
         oneiP: number
     twoiP: number

@@ -36,7 +36,8 @@ const Task2 = ( price: Props
         val: 'EUR',
         totalPrice: 1,
         count: 1,
-        tot1: totalData.totalPrice
+        tot1:0
+            //totalData.totalPrice
     })
 
     const uanPriceToTotal = (
@@ -51,7 +52,7 @@ const Task2 = ( price: Props
             val: va,
             totalPrice: totalPrice,
             count: 1,
-            tot1: totalPrice * count
+            tot1: totalPrice * count,
         })
     }
 
@@ -72,10 +73,10 @@ const Task2 = ( price: Props
        // }))
    // }
 
-    const addPriceToTotal = (count: number, price: number) => {
+    const addPriceToTotal = (tot1: number,  count: number, price: number) => {
         setTotalData((prevState: TotalData) => ({
+            tot1: valData.tot1 =0,
             totalCount: prevState.totalCount + count,
-            tot1: 0,
             totalPrice: prevState.totalPrice + price * count,
         }))
     }
@@ -112,9 +113,10 @@ const Task2 = ( price: Props
                     onClick={() =>
                         uanPriceToTotal(
                             'EUR',
-                            (totalData.totalPrice = Math.round(
-                                totalData.totalPrice * 1
-                            )),
+                            (valData.tot1 = totalData.totalPrice * 1),
+                            // (totalData.totalPrice = Math.round(
+                            //     totalData.totalPrice * 1
+                            // )),
                             1
                             //  valData.count
                         )
@@ -164,7 +166,8 @@ const Task2 = ( price: Props
             <Products addPriceToTotal={addPriceToTotal} valData={valData} />
             <div>
                 {' '}
-                Total: {valData.tot1 === 0 ? totalData.totalPrice : valData.tot1}
+                Total:{' '}
+                {valData.tot1 === 0 ? totalData.totalPrice : valData.tot1}
             </div>
         </>
     )
