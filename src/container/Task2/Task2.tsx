@@ -75,6 +75,7 @@ const Task2 = ( price: Props
     const addPriceToTotal = (count: number, price: number) => {
         setTotalData((prevState: TotalData) => ({
             totalCount: prevState.totalCount + count,
+            tot1: 0,
             totalPrice: prevState.totalPrice + price * count,
         }))
     }
@@ -99,8 +100,8 @@ const Task2 = ( price: Props
                     onClick={() =>
                         uanPriceToTotal(
                             'UAN',
-                            (valData.tot1 = totalData.totalPrice * 40),
-                            40 
+                            (valData.tot1 = totalData.totalPrice * 1),
+                            40
                         )
                     }
                 >
@@ -127,7 +128,7 @@ const Task2 = ( price: Props
                         uanPriceToTotal(
                             'USD',
                             (valData.tot1 = Math.round(
-                                totalData.totalPrice * 1.05
+                                totalData.totalPrice * 1
                             )),
                             1.05
                         )
@@ -141,7 +142,7 @@ const Task2 = ( price: Props
                         uanPriceToTotal(
                             'AED',
                             (valData.tot1 = Math.round(
-                                totalData.totalPrice * 3.8
+                                totalData.totalPrice * 1
                             )),
                             3.8
                             // valData.count,
